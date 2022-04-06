@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('user', {
+    await queryInterface.createTable('users', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -26,7 +26,7 @@ module.exports = {
       }
     });
 
-    await queryInterface.createTable('car', {
+    await queryInterface.createTable('cars', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -50,7 +50,7 @@ module.exports = {
       }
     });
 
-    await queryInterface.createTable('rental', {
+    await queryInterface.createTable('transactions', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -61,7 +61,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references:{
-          model:'user',
+          model:'users',
           key:'id'
         }
       },
@@ -69,9 +69,16 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references:{
-          model:'car',
+          model:'cars',
           key:'id'
         }
+      },
+      tanggal_pinjam:{
+        type: Sequelize.DATEONLY,
+
+      },
+      tanggal_kembali:{
+          type: Sequelize.DATEONLY,
       },
       created_at: {
         allowNull: false,

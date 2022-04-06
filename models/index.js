@@ -31,7 +31,7 @@ db.user = require('./user')(sequelize, DataTypes)
 db.car = require('./car')(sequelize, DataTypes)
 db.trans = require('./transaction')(sequelize, DataTypes)
 
-db.sequelize.sync({ force: false , alter: true })
+db.sequelize.sync({ alter: true })
 .then(() => {
     console.log('yes re-sync done!')
 })

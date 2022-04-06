@@ -3,69 +3,64 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
-        'user',
+        'users',
         [
           {
-            id :1,
             nama: 'mario',
             email:'nathanelmario@gmail.com',
-            created_at: new Date(),
-            updated_at: new Date()
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
           {
-            id :2,
             nama: 'eyon',
             email:'kevingideon@gmail.com',
-            created_at: new Date(),
-            updated_at: new Date()
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
           {
-            id :3,
             nama: 'nama',
             email:'namamar02@gmail.com',
-            created_at: new Date(),
-            updated_at: new Date()
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
         ],
         {}
     );
     await queryInterface.bulkInsert(
-        'car',
+        'cars',
         [
           {
-            id: 1,
             jenis: 'toyota',
             ketersediaan: true,
-            created_at: new Date(),
-            updated_at: new Date()
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
           {
-            id: 2,
             jenis: 'honda',
             ketersediaan: true,
-            created_at: new Date(),
-            updated_at: new Date()
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
           {
-            id: 3,
             jenis: 'mitsubisi',
             ketersediaan: true,
-            created_at: new Date(),
-            updated_at: new Date()
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
 
         ],
         {}
     );
     await queryInterface.bulkInsert(
-        "rental",
+        "transactions",
       [
         {
-          id: 1,
-          id_pelanggan: 1,
+          id_user: 1,
           id_mobil:3,
-          created_at: new Date(),
-          updated_at: new Date()
+          tanggal_pinjam:"2022-03-18",
+          tanggal_kembali:"2022-03-26",
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}

@@ -24,6 +24,7 @@ const addTrans = async (req,res)=>{
     }
 }
 
+
 //get all transaction
 const getAllTrans = async (req,res)=>{
     let trans = await Tran.findAll({})

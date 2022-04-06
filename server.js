@@ -7,10 +7,6 @@ var corOptions = {
     origin: 'https://localhost:8081',
 };
 
-
-
-
-
 app.use(cors(corOptions));
 
 app.use(express.json());
@@ -19,7 +15,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 //route
-const route = require('./routes/route')
+const route = require('./routes/userroute')
 app.use('/api',route)
 
 const carroute = require('./routes/carroute')
