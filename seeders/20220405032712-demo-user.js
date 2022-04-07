@@ -31,19 +31,19 @@ module.exports = {
         [
           {
             jenis: 'toyota',
-            ketersediaan: true,
+            harga: 360000,
             createdAt: new Date(),
             updatedAt: new Date()
           },
           {
             jenis: 'honda',
-            ketersediaan: true,
+            harga: 380000,
             createdAt: new Date(),
             updatedAt: new Date()
           },
           {
             jenis: 'mitsubisi',
-            ketersediaan: true,
+            harga: 370000,
             createdAt: new Date(),
             updatedAt: new Date()
           },

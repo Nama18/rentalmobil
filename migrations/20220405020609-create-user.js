@@ -16,12 +16,10 @@ module.exports = {
         type: Sequelize.STRING,
         unique: true,
       },
-      created_at: {
-        allowNull: false,
+      createdAt:{
         type: Sequelize.DATE
       },
-      updated_at: {
-        allowNull: false,
+      updatedAt:{
         type: Sequelize.DATE
       }
     });
@@ -36,16 +34,13 @@ module.exports = {
       jenis: {
         type: Sequelize.STRING
       },
-      ketersediaan:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true,
+      harga:{
+        type: Sequelize.INTEGER
       },
-      created_at: {
-        allowNull: false,
+      createdAt:{
         type: Sequelize.DATE
       },
-      updated_at: {
-        allowNull: false,
+      updatedAt:{
         type: Sequelize.DATE
       }
     });
@@ -57,7 +52,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id_pelanggan:{
+      id_user:{
         type: Sequelize.INTEGER,
         allowNull: false,
         references:{
@@ -80,18 +75,21 @@ module.exports = {
       tanggal_kembali:{
           type: Sequelize.DATEONLY,
       },
-      created_at: {
-        allowNull: false,
+      status_bayar:{
+        type: Sequelize.BOOLEAN,
+      },
+      createdAt:{
         type: Sequelize.DATE
       },
-      updated_at: {
-        allowNull: false,
+      updatedAt:{
         type: Sequelize.DATE
       }
     });
     
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable();
+    await queryInterface.dropTable('transactions');
+    await queryInterface.dropTable('cars');
+    await queryInterface.dropTable('users');
   }
 };

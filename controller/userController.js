@@ -41,7 +41,12 @@ const getOneUser = async (req,res)=>{
 const updateUser = async (req,res)=>{
     let id = req.params.id
     const user = await User.update(req.body, {where: {id: id}})
-    res.status(200).send(user)
+    if(user==1){
+        const data = await User.findOne({where: {id: id}})
+        res.status(200).send(data)
+    }else{
+        res.status(500).send("Data Tidak Terupdate")
+    }
 }
 
 //delete user

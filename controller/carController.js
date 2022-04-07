@@ -9,7 +9,7 @@ const addCar = async (req,res)=>{
 
     let info = {
         jenis: req.body.jenis,
-        ketersediaan: req.body.ketersediaan,
+        harga: req.body.harga,
     }
 
     try{
@@ -41,7 +41,12 @@ const getOneCar = async (req,res)=>{
 const updateCar = async (req,res)=>{
     let id = req.params.id
     const car = await Car.update(req.body, {where: {id: id}})
-    res.status(200).send(car)
+    if(car==1){
+        const data = await Car.findOne({where: {id: id}})
+        res.status(200).send(data)
+    }else{
+        res.status(500).send("Data Tidak Terupdate")
+    }
 }
 
 //delete user

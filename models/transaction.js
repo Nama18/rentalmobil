@@ -27,6 +27,15 @@ module.exports = (sequelize, DataTypes) => {
       },
       tanggal_kembali:{
           type: DataTypes.DATEONLY,
+      },
+      lamapinjam:{
+        type: DataTypes.INTEGER,
+      },
+      total:{
+        type: DataTypes.INTEGER,
+      },
+      status_bayar:{
+        type: DataTypes.BOOLEAN,
       }
     })
 

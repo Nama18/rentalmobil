@@ -11,11 +11,15 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING
       },
-      ketersediaan: {
-        allowNull : false,
-        type: DataTypes.BOOLEAN,
-        defaultValue: true,
+      harga:{
+        allowNull: false,
+        type: DataTypes.INTEGER
       },
+      ketersedian:
+      {
+        type: DataTypes.BOOLEAN,
+        defaultValue:true,
+      }
     })
 
     return Car
